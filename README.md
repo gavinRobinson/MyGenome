@@ -11,4 +11,4 @@ fastqc&
 Load F1 and R1 data into GUI interface.
 Take screen shots of output files: 
 
-![Screenshot(111).png](/data/Screenshot(111).png)
+![Screenshot(111).png](/MyGenome/data/Screenshot(111).png)
