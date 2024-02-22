@@ -11,4 +11,6 @@ fastqc&
 Load F1 and R1 data into GUI interface.
 Take screen shots of output files: 
 
-![Screenshot(111).png](data/velvetgOutput.png)
+![Screenshot(111).png](data/U247_1_paired.png)
+![Screenshot(111).png](data/U247_2_paired.png)
+
