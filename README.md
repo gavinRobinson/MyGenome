@@ -21,7 +21,8 @@ ssh ghro223@mc.uky.edu
 cd..
 cd..
 cd project/farman_s24cs485g/
-cd ghro223/
+mkdir ghro223
+cd ghro223
 scp ghro223@ghro223.cs.uky.edu:/home/ghro223/MyGenome/U247_1_paired.fastq .
 scp ghro223@ghro223.cs.uky.edu:/home/ghro223/MyGenome/U247_1_unpaired.fastq .
 scp ghro223@ghro223.cs.uky.edu:/home/ghro223/MyGenome/U247_2_paired.fastq .
