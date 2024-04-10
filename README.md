@@ -37,8 +37,8 @@ sbatch velvetoptimiser_noclean.sh U247 61 131 10
 After the run was complete, I analyzed the new assembly data via command
 ```bash
 tail -50 U247/velvet_U247_61_131_10_noclean/19-03-2024-15-01-19_Logfile.txt
-```
-FIXME need to inlcude screen shot 
+``` 
+![Screenshot(121).png](data/Screenshot(121).png) 
 I then went on to run the velvetoptimiser_noclean.sh script with a step size of 2
 ```bash
 sbatch velvetoptimiser_noclean.sh U247 110 130 2
