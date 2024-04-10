@@ -43,3 +43,8 @@ I then went on to run the velvetoptimiser_noclean.sh script with a step size of 
 ```bash
 sbatch velvetoptimiser_noclean.sh U247 110 130 2
 ```
+After the run was complete, I analyzed the new assembly data via command
+```bash
+tail -50 U247/velvet_U247_110_130_2_noclean/21-03-2024-14-41-21_Logfile.txt
+```
+![Screenshot(127).png](data/Screenshot(127).png)
