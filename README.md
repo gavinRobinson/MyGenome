@@ -85,3 +85,26 @@ I then ran the following because of the assignment and yielded no output
 ```blast
 grep Pot2 MoRepeats.U247.BLASTn6 | awk '$4 >= 5638*0.9'
 grep Pot2 MoRepeats.U247.BLASTn6 | awk '$2 ~ /contig2655/' | awk '$9 > 2000000 && $9 < 3000000' | sort -k9n
+```
+I then ran the following to remove contigs from my assembly that are less than 200 base pairs in length
+```bash
+perl CullShortContigs.pl U247_nh.fasta
+perl SequenceLengths.pl U247_final.fasta
+```
+The following code was to determine which contigs in the resulting assembly correspond to the mitochondrial genome (NCBI needs us to identify those contigs).
+BLAST the MoMitochondrion.fasta sequence against your final genome assembly using output format 6 with specific column selections
+```bash
+blastn -query MoMitochondrion.fasta -subject U247_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' -out MoMitochondrion.U247.BLAST
+```
+Then exporting a list of contigs that mostly comprise mitochondrial sequences (this will be uploaded to NCBI along with our genome assembly):
+```bash
+awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' MoMitochondrion.U247.BLAST > U247_mitochondrion.csv
+```
+I then copied the B71v2sh_masked.fasta genome from (Farman Lab machine Desktop) to my blast directory inside my VM and ran the following 
+```bash
+blastn -query B71v2sh_masked.fasta -subject U247_Final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.U247.BLAST
+```
+I then created a directory named MyGenome_BLAST inside of my MCC ghro223 directory and moved my BLAST output file into that directory. I also copied the B71v2sh.U247.BLAST file into the CLASS_BLASTS directory (/project/farman_s24cs485g/BLAST). I then copied the CallVariants.sh script from farman_s24cs485g/SCRIPTs into the ghro223 directory in farman_s24cs485g and ran the following SLURM script on the MCC
+```bash
+sbatch CallVariants.sh U247_BLAST
+```
