@@ -64,3 +64,15 @@ blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn9 -ev
 blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn10 -evalue 1e-20 -outfmt 10
 blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn11 -evalue 1e-20 -outfmt 11
 ```
+I then used scp to transfer SequenceLengths.pl from the MCC to my VM and ran the following in my blast directory
+```bash
+perl SequenceLengths.pl U247.fasta | sort -k2n
+```
+I then ran the following on my n6 output in an attempt to see if my genome contained any MAGGY gene
+```bash
+grep MAGGY MoRepeats.U247.BLASTn6
+```
+And did not get any matches, I then ran the same but with the Pot2 gene
+```bash
+ grep Pot2 MoRepeats.U247.BLASTn6
+```
