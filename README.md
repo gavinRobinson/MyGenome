@@ -81,3 +81,7 @@ grep Pot2 MoRepeats.U247.BLASTn6 | wc -l
 ```
 And got 85 matches
 ![Screenshot(129).png](data/Screenshot(129).png)
+I then ran the following because of the assignment and yielded no output
+```blast
+grep Pot2 MoRepeats.U247.BLASTn6 | awk '$4 >= 5638*0.9'
+grep Pot2 MoRepeats.U247.BLASTn6 | awk '$2 ~ /contig2655/' | awk '$9 > 2000000 && $9 < 3000000' | sort -k9n
