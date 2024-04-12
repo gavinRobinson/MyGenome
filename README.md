@@ -64,10 +64,12 @@ blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn9 -ev
 blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn10 -evalue 1e-20 -outfmt 10
 blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn11 -evalue 1e-20 -outfmt 11
 ```
-I then used scp to transfer SequenceLengths.pl from the MCC to my VM and ran the following in my blast directory
+I then used scp to transfer SequenceLengths.pl from the farman lab computer desktop to my VM and ran the following in my blast directory
 ```bash
 perl SequenceLengths.pl U247.fasta | sort -k2n
 ```
+![Screenshot(130).png](data/Screenshot(130).png)
+From this I learned that my longest contig was U247_contig2655
 I then ran the following on my n6 output in an attempt to see if my genome contained any MAGGY gene
 ```bash
 grep MAGGY MoRepeats.U247.BLASTn6
