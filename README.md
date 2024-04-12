@@ -78,3 +78,4 @@ grep Pot2 MoRepeats.U247.BLASTn6
 grep Pot2 MoRepeats.U247.BLASTn6 | wc -l
 ```
 And got 85 matches
+![Screenshot(129).png](data/U247_2_paired.png)
