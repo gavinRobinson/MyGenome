@@ -74,5 +74,7 @@ grep MAGGY MoRepeats.U247.BLASTn6
 ```
 And did not get any matches, I then ran the same but with the Pot2 gene
 ```bash
- grep Pot2 MoRepeats.U247.BLASTn6
+grep Pot2 MoRepeats.U247.BLASTn6
+grep Pot2 MoRepeats.U247.BLASTn6 | wc -l
 ```
+And got 85 matches
