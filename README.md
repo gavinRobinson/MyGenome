@@ -1,7 +1,7 @@
-# MyGenome
+# MyGenome (U247)
 Analyses for ABT480/CS485G genome assembly
 
-## 1. Analysis of sequence quality
+## 1. Analysis of U247 sequence quality
 The F1 and R1 sequence data sets were analyzed using FASTQC:
 ```bash
 ssh -Y ghro223@ghro223.cs.uky.edu
@@ -14,7 +14,7 @@ Take screen shots of output files:
 ![Screenshot(111).png](data/U247_1_paired.png)
 ![Screenshot(111).png](data/U247_2_paired.png)
 
-## 2. Assembly using MCC
+## 2. Assembly of U247 using MCC
 Logging into MCC and scp sequence data
 ```bash
 ssh ghro223@mc.uky.edu
@@ -48,7 +48,7 @@ After the run was complete, I analyzed the new assembly data via command
 tail -50 U247/velvet_U247_110_130_2_noclean/21-03-2024-14-41-21_Logfile.txt
 ```
 ![Screenshot(127).png](data/Screenshot(127).png)
-## 3. Blasting my Genome
+## 3. Blasting U247
 Inside of my blast directory on my VM I ran the following
 ```bash
 blastn -subject U247.fasta-query MoRepeats.fasta -out MoRepeats.U247.BLASTn0 -evalue 1e-20 -outfmt 0
@@ -108,3 +108,5 @@ I then created a directory named MyGenome_BLAST inside of my MCC ghro223 directo
 ```bash
 sbatch CallVariants.sh U247_BLAST
 ```
+## 4. Busco U247
+## 5. Gene Prediction
