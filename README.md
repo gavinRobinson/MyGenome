@@ -100,7 +100,7 @@ Then exporting a list of contigs that mostly comprise mitochondrial sequences (t
 ```bash
 awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' MoMitochondrion.U247.BLAST > U247_mitochondrion.csv
 ```
-I then copied the B71v2sh_masked.fasta genome from (Farman Lab machine Desktop) to my blast directory inside my VM and ran the following 
+This command yielded an output [.csv file called U247_mitochondrion.csv](data/U247_mitochondrion.csv) which is to be submitted, along with my U247_final.fasta, for the NCBI submission. I then copied the B71v2sh_masked.fasta genome from (Farman Lab machine Desktop) to my blast directory inside my VM and ran the following 
 ```bash
 blastn -query B71v2sh_masked.fasta -subject U247_Final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.U247.BLAST
 ```
