@@ -108,4 +108,3 @@ I then created a directory named MyGenome_BLAST inside of my MCC ghro223 directo
 ```bash
 sbatch CallVariants.sh U247_BLAST
 ```
-## 4. Gene Prediction
